@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <title>Prime Number</title>
+    <script>
+      funtion prime()
+      {
+        var n=document.getElementById("inputNumber").value;
+        var prime=[];
+        for(var i=2;i<n;i++)
+          {
+            var isprime=true;
+            for(var j=2;j<Math.sqrt(i);j++)
+              {
+                if(i%j==0)
+                {
+                  isprime=false;
+                  break;
+                }
+              }
+            if(isprime)
+            {
+              primes.push(i);
+            }
+          }
+        document.getElementById("result").innerHTML="prime Numbers upto "+n+":"+primes.join(",");
+      }
+    </script>
+  </head>
+  <body>
+    <label for="inputNumber">input a number</label>
+    <input type="number" id="inputNumber"/>
+    <button onclick="prime()">Generate prime</button>
+    <p id="result"></p>
+  </body>
+</html>
